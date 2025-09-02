@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "./assets/plugins/bootstrap/css/bootstrap.min.css";
+import "./assets/plugins/summernote/dist/summernote.css";
+import "./assets/css/style.min.css";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +32,14 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <Script src="/assets/bundles/lib.vendor.bundle.js"></Script>
+        <Script src="/assets/bundles/counterup.bundle.js"></Script>
+        <Script src="/assets/bundles/apexcharts.bundle.js"></Script>
+        <Script src="/assets/bundles/summernote.bundle.js"></Script>
+
+        <Script src="/assets/js/core.js"></Script>
+        {/* <Script src="assets/js/page/index.js"></Script> */}
+        {/* <Script src="assets/js/page/summernote.js"></Script> */}
       </body>
     </html>
   );
